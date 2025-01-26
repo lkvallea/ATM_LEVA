@@ -1,0 +1,33 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Juanito Perez",
+        "pin": "1234",
+        "balance": 15000,
+        "cardType": "Visa"
+      },
+      {
+        "id": 2,
+        "name": "Pedro Fernandez",
+        "pin": "5678",
+        "balance": 30000,
+        "cardType": "MasterCard"
+      },
+      {
+        "id": 3,
+        "name": "Alejandra Lopez",
+        "pin": "0987",
+        "balance": 2000,
+        "cardType": "MasterCard"
+      },
+      {
+        "id": 4,
+        "name": "Laura Gonzalez",
+        "pin": "5678",
+        "balance": 1000,
+        "cardType": "MasterCard"
+      }
+    ]
+  }
+  
