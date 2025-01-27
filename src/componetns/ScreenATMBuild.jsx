@@ -4,16 +4,6 @@ import ATMOptions from "./ATMOptions";
 const ScreenATMBuild = ({ currentScreen, currentConfig, onInputChange, userData }) => {
   const { screen } = currentConfig;
 
-  //   const handleInputChange = (e) => {
-  //     const { value } = e.target;
-  //     const maxLength = screen.input.maxLength || 4;
-  //     const pattern = screen.input.pattern || /^\d*$/;
-
-  //     if (pattern.test(value) && value.length <= maxLength) {
-  //       setInputValue(value);
-  //     }
-  //   };
-
   return (
     <div className="screen-atm-build">
       <div className="screen-text">
@@ -48,7 +38,6 @@ const ScreenATMBuild = ({ currentScreen, currentConfig, onInputChange, userData 
             onChange={onInputChange}
             min={screen.input.min || ""}
             max={screen.input.max || ""}
-            // value={screen.input.value}
             className="screen-input"
             autoFocus
           />

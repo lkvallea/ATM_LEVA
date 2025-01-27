@@ -50,17 +50,17 @@ export const handleButton = async (action, setCurrentScreen, inputValue,
                     setActiveIndex(null)
                 }
 
-                // Intentar realizar el retiro
+                
                 const result = await withdrawAmount(userData.id, inputValue);
 
                 if (result.success) {
                     const updatedUser = {
                         ...userData,
-                        balance: result.balance, // Actualiza el saldo del usuario
+                        balance: result.balance, 
                     };
-                    setUserData(updatedUser); // Actualiza el estado del usuario
-                    setInputValue(""); // Limpia el valor del input
-                    setCurrentScreen("success"); // Redirige a la pantalla de éxito
+                    setUserData(updatedUser); 
+                    setInputValue(""); 
+                    setCurrentScreen("success"); 
                 }
             } catch (error) {
                 console.error(error.error || error.message);
@@ -71,8 +71,8 @@ export const handleButton = async (action, setCurrentScreen, inputValue,
                     alert(error.error || "Something went wrong. Please try again.");
                 }
 
-                setInputValue(""); // Limpia el valor del input
-                setCurrentScreen("withdraw"); // Redirige de nuevo a la pantalla de retiro
+                setInputValue(""); 
+                setCurrentScreen("withdraw"); 
             }
 
             break;
@@ -130,7 +130,7 @@ export const handleButton = async (action, setCurrentScreen, inputValue,
         case "delete":
             const inputElement = document.getElementsByClassName("screen-input")[0];
             if (inputElement) {
-                inputElement.value = ""; // Borra el valor del input
+                inputElement.value = ""; 
             }
             break;
 

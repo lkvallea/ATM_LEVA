@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 const CardTypeBanner = ({ userData,activeIndex, setActiveIndex}) => {
   
-
-  // Mapeo de cardType a índice
   const cardTypeIndexMap = {
     Star: 0,
     Pulsa: 1,
@@ -13,7 +11,6 @@ const CardTypeBanner = ({ userData,activeIndex, setActiveIndex}) => {
     Visa: 5,
   };
 
-  // Actualiza el estado activo basado en el cardType de userData
   useEffect(() => {
     if (userData?.cardType) {
       setActiveIndex(cardTypeIndexMap[userData.cardType] ?? null);
