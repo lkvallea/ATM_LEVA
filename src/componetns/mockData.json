@@ -12,7 +12,7 @@
         "name": "Pedro Fernandez",
         "pin": "5678",
         "balance": 30000,
-        "cardType": "MasterCard"
+        "cardType": "Star"
       },
       {
         "id": 3,
@@ -24,9 +24,23 @@
       {
         "id": 4,
         "name": "Laura Gonzalez",
-        "pin": "5678",
+        "pin": "6543",
         "balance": 1000,
-        "cardType": "MasterCard"
+        "cardType": "Maestro"
+      },
+      {
+        "id": 5,
+        "name": "Luis Hernandez",
+        "pin": "2222",
+        "balance": 1630,
+        "cardType": "Pulsa"
+      },
+      {
+        "id": 6,
+        "name": "Fernando Pascal",
+        "pin": "3333",
+        "balance": 3456,
+        "cardType": "Plus"
       }
     ]
   }

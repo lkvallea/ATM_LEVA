@@ -1,56 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
+
+
 :root {
   --background-color-main-: #9f80ac;
-  --background-color-tittle-atm-: #126cae
+  --background-color-tittle-atm-: #126cae;
+  --background-color-screen- : #7eb4d5;
 }
 
-.main-wrapper {
-  display: block;
-  position: absolute;
-  height: auto;
-  width: auto;
-  background-color: #FFF;
-}
+/* .screen-atm-build {
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+} */
 
-.background-wrapper {
+body{
   background-color: var(--background-color-main-);
-  height: 100vh;
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
 
 .atm-machine-container {
+  margin: auto;
+  height: 100vh;
   display: grid;
-  grid-template-rows: 2fr .5fr 3fr 4fr;
-  height: 90%;
-  align-self: flex-end;
-  width: 40%;
-  background-color: #FFF;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  max-width: 27.5em;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .atm-tittle-container {
   display: flex;
   position: relative;
-  right: 40px;
-  width: 120%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
   border-radius: 1em;
   box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
   background-color: var(--background-color-tittle-atm-);
-  padding: 1.5em 0;
+  padding: .5em 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
 }
 
 .atm-img {
   display: flex;
-  position: absolute;
-  width: 80%;
+  width: 70%;
   margin: .5em;
-  /* justify-content: center;
-  align-self: center; */
 }
 
 .atm-img img {
@@ -60,11 +55,10 @@
 }
 
 .graffiti-img {
-  display: flex;
   position: absolute;
   width: 50%;
-  right: .5em;
-  top: 2.65em;
+  right: 1.2em;
+  top: 2em;
 }
 
 .graffiti-img img {
@@ -73,23 +67,308 @@
   height: auto;
 }
 
-.card-type-banner {
-  position: relative;
-  /* Para que .logo-pic se posicione dentro de este contenedor */
+.atm-screen-container,
+.atm-screen-bottom,
+.card-type-banner{
+  background-color: #fff;
+  margin: 0 1em;
+}
+
+.logo-pic{
   display: flex;
-  align-items: center;
-  /* Alinea verticalmente el contenido del banner */
   justify-content: center;
 }
 
-.logo-pic {
-  display: flex;
-  position: absolute;
-
+.list-logo-container{
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-content: center;
+  margin-top: .8em;
+  gap: .2em;
 }
 
-.logo-pic img {
-  object-fit: contain;
-  width: 100%;
-  height: auto;
+.list-logo{
+  height: 1.2em;
+  background: url('/creditcard_sprite.png'); 
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: auto 2.5em;
+  margin-bottom: .5em;
+  opacity: .2;
+  transition: all;
+}
+
+.list-logo:nth-child(1){
+  width: 1.8em;
+}
+.list-logo:nth-child(2){
+  background-position: -36px 0;
+  width: 2.6em;
+}
+.list-logo:nth-child(3){
+  background-position: -86px 0;
+  width: 2em;
+}
+.list-logo:nth-child(4){
+  background-position: -123px 0;
+  width: 2em;
+}
+.list-logo:nth-child(5){
+  background-position: -161px 0;
+  width: 2em;
+}
+.list-logo:nth-child(6){
+  background-position: -198px 0;
+  width: 2em;
+}
+
+.list-logo.active {
+  opacity: 1; /* Resalta la tarjeta activa */
+}
+
+.atm-screen-container {
+  display: grid;
+  grid-template-rows: 1fr repeat(5, auto);
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+   ". screen ."
+    "left screen right"
+    "left screen right"
+    "left screen right"
+    "left screen right";
+}
+
+.left-buttons {
+  grid-area: left;
+  position: relative;
+}
+
+.left-buttons .atm-btn::after{
+  content: '';
+  position: absolute;
+  top: .5em;
+  right: -1.1em;
+  width: 1.1em;
+  height: .2em;
+  background-color: #9b9b9b;
+}
+
+.right-buttons {
+  grid-area: right;
+  position: relative;
+}
+
+.right-buttons .atm-btn::before{
+  content: '';
+  position: absolute;
+  top: .5em;
+  left: -1.1em;
+  width: 1.1em;
+  height: .2em;
+  background-color: #9b9b9b;
+}
+
+.atm-screen {
+  grid-area: screen;
+}
+
+.sticker{
+  position: absolute;
+  bottom: -6.6em;
+  left: -3.5em;
+}
+
+.systems{
+  position: absolute;
+  bottom: -1em;
+  right: 0;
+}
+
+
+
+.atm-buttons{
+  grid-row-start: 2;
+  grid-row-end: 5; 
+  margin: 0 1em;
+}
+
+.atm-btn {
+  width: 2.2em;
+  height: 1.3em;
+  background-color: #ccc; 
+  border: 1px solid #999; 
+  border-radius: 4px; 
+  box-shadow: 
+  inset 1px 1px 2px rgba(255, 255, 255, 0.6), 
+  2px 2px 5px rgba(0, 0, 0, 0.2); 
+  margin-bottom: .5em;
+  position: relative;
+  transition: all .5s;
+}
+
+.atm-btn:hover{
+  cursor: pointer;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+    1px 1px 2px rgba(255, 255, 255, 0.6); 
+}
+
+
+.atm-screen {
+  width: 17em;
+  height: 15.8em;
+  background-color: var(--background-color-screen-);  
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  border: 5px solid #ccc; 
+}
+
+
+
+.atm-screen-bottom{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+/* SCREEN BUILD    */
+
+.bottom-option{
+  font-size: 8px;
+}
+
+.screen-text{
+  font-size: 18px;
+}
+
+.screen-atm-build{
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  display: grid;
+  justify-content: stretch;
+  align-content: stretch;  
+  grid-template-rows: 1fr repeat(4, 1.78em);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+   "screen-text screen-text"
+   "o1 o5"
+   "o2 o6"
+   "o3 o7"
+   "o4 o8";
+   column-gap: .5em;
+}
+
+.screen-text{
+  grid-area: screen-text;
+}
+
+.o1{
+  grid-area: o1;
+}
+
+.o2{
+  grid-area: o2;
+}
+
+.o3{
+  grid-area: o3;
+}
+
+.o4{
+  grid-area: o4;
+}
+
+.o5{
+  grid-area: o5;
+}
+
+.o6{
+  grid-area: o6;
+}
+
+.o7{
+  grid-area: o7;
+}
+
+.o8{
+  grid-area: o8;
+}
+
+.bottom-option{
+  align-self: center;
+}
+
+.left-option{
+  justify-self: flex-start;
+  text-align: left;
+  position: relative;
+  padding-left: 2em;
+}
+
+.right-option{
+  justify-self: flex-end;
+  text-align: right;
+  position: relative;
+  padding-right: 2em;
+}
+
+.left-option::before{
+  content: '';
+  position: absolute;
+  top: .55em;
+  left: 0;
+  width: 1.7em;
+  height: .3em;
+  background-color: #fff;
+}
+
+.right-option::after{
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 0em;
+  width: 1.7em;
+  height: .3em;
+  background-color: #fff;
+}
+
+.no-pseudo::before,
+.no-pseudo::after {
+  content: none; /* Elimina el pseudo-elemento */
+}
+
+.screen-text{
+  align-self: center;
+}
+
+.screen-input {
+  text-align: center;
+  width: 70%;
+  font-size: 12px;
+  position: relative;
+  caret-color: black; 
+}
+
+.screen-input::after {
+  content: '|'; 
+  position: absolute;
+  right: 10%; 
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: inherit;
+  color: black;
+  animation: blink 0.8s steps(2, start) infinite;
+  pointer-events: none; 
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.1%, 100% {
+    opacity: 0;
+  }
 }

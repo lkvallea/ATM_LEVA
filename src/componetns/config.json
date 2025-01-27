@@ -1,0 +1,387 @@
+{
+    "init": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 2,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 3,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 4,
+                    "caption": "",
+                    "action": ""
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 6,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 7,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 8,
+                    "caption": "Enter PIN",
+                    "action": "login"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Welcome to the ATM"
+        }
+    },
+    "login": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "Enter",
+                    "action": "enter"
+                },
+                {
+                    "id": 2,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 3,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 4,
+                    "caption": "",
+                    "action": ""
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "Delete",
+                    "action": "delete"
+                },
+                {
+                    "id": 6,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 7,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 8,
+                    "caption": "Cancel",
+                    "action": "exit"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Enter your PIN",
+            "input":
+            {
+                "id":1,
+                "type":"password",
+                "placeholder":"Enter PIN",
+                "maxLength": 4,
+                "pattern": "^[0-9]*$"
+            }
+        }
+    },
+    "dashboard": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 2,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 3,
+                    "caption": "Withdraw",
+                    "action": "withdraw"
+                },
+                {
+                    "id": 4,
+                    "caption": "Deposit",
+                    "action": "deposit"
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 6,
+                    "caption": "Exit",
+                    "action": "exit"
+                },
+                {
+                    "id": 7,
+                    "caption": "Balance",
+                    "action": "balance"
+                },
+                {
+                    "id": 8,
+                    "caption": "Re-Enter PIN",
+                    "action": "login"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Hi",
+            "text2": "Please make a choice..."
+        }
+    },
+    "withdraw": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 2,
+                    "caption": "YES",
+                    "action": "confirmWithdraw"
+                },
+                {
+                    "id": 3,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 4,
+                    "caption": "",
+                    "action": ""
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 6,
+                    "caption": "NO",
+                    "action": "cancel"
+                },
+                {
+                    "id": 7,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 8,
+                    "caption": "Exit",
+                    "action": "exit"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Please, Enter amount",
+            "input":
+            {
+                "id":1,
+                "type":"number",
+                "placeholder":"Enter amount",
+                "min":1,
+                "maxLength": 8000,
+                "pattern": "^[0-9]*$"
+            }
+        }
+    }, 
+    "deposit": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 2,
+                    "caption": "YES",
+                    "action": "confirmDeposit"
+                },
+                {
+                    "id": 3,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 4,
+                    "caption": "",
+                    "action": ""
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 6,
+                    "caption": "NO",
+                    "action": "cancel"
+                },
+                {
+                    "id": 7,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 8,
+                    "caption": "Exit",
+                    "action": "exit"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Please, Enter amount",
+            "input":
+            {
+                "id":1,
+                "type":"number",
+                "placeholder":"Enter amount",
+                "min":1,
+                "maxLength": 8000,
+                "pattern": "^[0-9]*$"
+            }
+        }
+    }, 
+    "success": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 2,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 3,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 4,
+                    "caption": "",
+                    "action": ""
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 6,
+                    "caption": "Do you want other transaction?",
+                    "action": "other"
+                },
+                {
+                    "id": 7,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 8,
+                    "caption": "Exit",
+                    "action": "exit"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Transaction successful!",
+            "text2":"Your balance is"
+        }
+    },
+    "balance": {
+        "buttons": {
+            "left": [
+                {
+                    "id": 1,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 2,
+                    "caption": "Return",
+                    "action": "cancel"
+                },
+                {
+                    "id": 3,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 4,
+                    "caption": "",
+                    "action": ""
+                }
+            ],
+            "right": [
+                {
+                    "id": 5,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 6,
+                    "caption": "Do you want other transaction?",
+                    "action": "other"
+                },
+                {
+                    "id": 7,
+                    "caption": "",
+                    "action": ""
+                },
+                {
+                    "id": 8,
+                    "caption": "Exit",
+                    "action": "exit"
+                }
+            ]
+        },
+        "screen":{
+            "text":"Your balance is"
+        }
+    }
+}
