@@ -1,7 +1,7 @@
 import { getUserByPIN, createToken, validateToken, withdrawAmount, depositAmount } from "../assets/api/mockApi";
 
-export const handleButton = async (action, setCurrentScreen, inputValue, 
-    userData, setUserData, setInputValue, token, setToken,setActiveIndex) => {
+export const handleButton = async (action, setCurrentScreen, inputValue,
+    userData, setUserData, setInputValue, token, setToken, setActiveIndex) => {
     console.log(`Action triggered: ${action}`);
     switch (action) {
         case "login":
@@ -39,34 +39,42 @@ export const handleButton = async (action, setCurrentScreen, inputValue,
         case "confirmWithdraw":
             try {
                 const isValidToken = await validateToken(token);
+
                 if (!isValidToken) {
-                    alert("Invalid token");
+                    alert("Invalid token. Please try again.");
                     localStorage.clear();
                     setToken("")
                     setUserData(null);
                     setInputValue("");
-                    setCurrentScreen('init')
+                    setCurrentScreen("init");
                     setActiveIndex(null)
                 }
+
+                // Intentar realizar el retiro
                 const result = await withdrawAmount(userData.id, inputValue);
+
                 if (result.success) {
                     const updatedUser = {
                         ...userData,
-                        balance: result.balance,
+                        balance: result.balance, // Actualiza el saldo del usuario
                     };
-                    setUserData(updatedUser);
-                    setCurrentScreen("success");
+                    setUserData(updatedUser); // Actualiza el estado del usuario
+                    setInputValue(""); // Limpia el valor del input
+                    setCurrentScreen("success"); // Redirige a la pantalla de éxito
                 }
             } catch (error) {
                 console.error(error.error || error.message);
-                alert(error.error || "Something went wrong. Please try again.");
-                localStorage.clear();
-                setToken("")
-                setUserData(null);
-                setInputValue("");
-                setCurrentScreen("init");
-                setActiveIndex(null)
+
+                if (error.error === "Insufficient balance.") {
+                    alert("Insufficient balance. Please try again with a smaller amount.");
+                } else {
+                    alert(error.error || "Something went wrong. Please try again.");
+                }
+
+                setInputValue(""); // Limpia el valor del input
+                setCurrentScreen("withdraw"); // Redirige de nuevo a la pantalla de retiro
             }
+
             break;
 
         case "deposit":

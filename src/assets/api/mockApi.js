@@ -18,20 +18,33 @@ export const getUserByPIN = async (pin) => {
 export const withdrawAmount = async (userId, amount) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      // Buscar el usuario en la base de datos
       const user = database.users.find((u) => u.id === userId);
+
       if (user) {
-        if (amount > 0 && amount <= user.balance) {
-          user.balance -= amount; 
-          resolve({ success: true, balance: user.balance }); 
-        } else {
-          reject({ error: "Invalid amount. Check your balance or input." });
+        const numericAmount = parseFloat(amount); // Asegura que amount sea un número
+        if (isNaN(numericAmount) || numericAmount <= 0) {
+          reject({ error: "Invalid amount. Please enter a valid number." });
+          return;
         }
+
+        // Validación del monto a retirar
+        if (numericAmount > user.balance) {
+          alert("Insufficient balance. Please try again with a smaller amount.");
+          reject({ error: "Insufficient balance." });
+          return;
+        }
+
+        // Resta el monto del saldo del usuario
+        user.balance -= numericAmount;
+        resolve({ success: true, balance: user.balance }); // Devuelve el saldo actualizado
       } else {
         reject({ error: "User not found" });
       }
-    }, 500); 
+    }, 500); // Simula un retraso de 500ms
   });
 };
+
 
 export const depositAmount = async (userId, amount) => {
   return new Promise((resolve, reject) => {
